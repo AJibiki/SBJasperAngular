@@ -33,7 +33,7 @@ public class SbJasperAngularApplication3 implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO 自動生成されたメソッド・スタブ
 		dispPreSystemInfo(args);
-//		initDataMemoBox();
+		initDataMemoBox();
 //		initDataPerson();
 	}
 
@@ -42,9 +42,12 @@ public class SbJasperAngularApplication3 implements CommandLineRunner {
      */
 	private void initDataMemoBox() {
 		// error:unconfigured columnfamily memobox
-		this.memoBoxRepository.deleteAll();
-    	this.memoBoxRepository.save((MemoBox) new MemoBox("a","b","tanaka1","memo1",new java.util.Date()));
-    	this.memoBoxRepository.save((MemoBox) new MemoBox("a","b","tanaka2","memo2",new java.util.Date()));
+//		this.memoBoxRepository.deleteAll();
+    	this.memoBoxRepository.save((MemoBox) new MemoBox("a","b","阿部","memo1",new java.util.Date()));
+    	this.memoBoxRepository.save((MemoBox) new MemoBox("a","b","高橋","memo2",new java.util.Date()));
+
+    	Iterable<MemoBox> obj = this.memoBoxRepository.findAll();
+    	obj.forEach(t -> {System.out.println(t.toString());});
 	}
 
     /**
