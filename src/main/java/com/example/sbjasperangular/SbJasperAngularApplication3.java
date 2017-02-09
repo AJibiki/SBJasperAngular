@@ -42,7 +42,7 @@ public class SbJasperAngularApplication3 implements CommandLineRunner {
      */
 	private void initDataMemoBox() {
 		// error:unconfigured columnfamily memobox
-//		this.memoBoxRepository.deleteAll();
+		this.memoBoxRepository.deleteAll();
     	this.memoBoxRepository.save((MemoBox) new MemoBox("a","b","阿部","memo1",new java.util.Date()));
     	this.memoBoxRepository.save((MemoBox) new MemoBox("a","b","高橋","memo2",new java.util.Date()));
 
